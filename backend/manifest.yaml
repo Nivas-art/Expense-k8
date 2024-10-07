@@ -51,7 +51,7 @@ spec:
   ports:
   - name: nginx
     protocol: TCP
-    port: 80 #service port
+    port: 8080 #service port
     targetPort: 8080 #target port
 
     
