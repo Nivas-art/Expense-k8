@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    project: for-deploy
+    env: db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+      project: mysql
+      env: db
+  template:
+    metadata:
+      name: deployement
+      labels:
+        app: nginx
+        project: mysql
+        env: db
+    spec:
+      containers:
+      - name: mysql
+        image: munaga123/mysql:v1.0
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+  namespace: expense
+spec:
+  selector:
+    environment: "db"
+    connection: "mysql"
+  ports:
+  - name: nginx
+    protocol: TCP
+    port: 3306 #service port
+    targetPort: 3306 #target port
+
+    
