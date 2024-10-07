@@ -13,7 +13,7 @@ kind: Deployment
 metadata:
   name: backend
   labels:
-    project: for-deploy
+    project: for_deploy
     env: backend
 spec:
   replicas: 2
@@ -46,7 +46,7 @@ metadata:
 spec:
   selector:
     environment: "dev"
-    connection:  backend"
+    connection:  "backend"
   ports:
   - name: nginx
     protocol: TCP
