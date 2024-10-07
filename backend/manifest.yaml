@@ -12,6 +12,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  namespace: expense
   labels:
     project: for_deploy
     env: backend
