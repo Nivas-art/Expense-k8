@@ -34,8 +34,8 @@ metadata:
   namespace: expense
 spec:
   selector:
-    environment: "db"
-    connection: "mysql"
+    project: for-deploy
+    env: db
   ports:
   - name: nginx
     protocol: TCP
