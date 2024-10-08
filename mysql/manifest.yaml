@@ -34,7 +34,8 @@ metadata:
   namespace: expense
 spec:
   selector:
-    project: for-deploy
+    app: nginx
+    project: mysql
     env: db
   ports:
   - name: nginx
